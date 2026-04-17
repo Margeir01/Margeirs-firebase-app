@@ -1,6 +1,6 @@
 {
-  "name": "Firebase App",
-  "short_name": "Firebase App",
+  "name": "Margeirs Firebase App",
+  "short_name": "Margeirs App",
   "description": "Lagre og administrer filmer og biler",
   "start_url": "./index.html",
   "scope": "./",
