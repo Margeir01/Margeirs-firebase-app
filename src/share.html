@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delt oversikt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f1117" />
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="share-page-header">
+        <h1>Delt oversikt</h1>
+        <p id="shareMeta" class="share-meta">Tracker-overblikk</p>
+      </div>
+
+      <section id="shareStatsSection" aria-label="Delt statistikk">
+        <div class="dashboard-grid">
+          <div class="mini-card">
+            <h3>Filmer sett</h3>
+            <p id="shareStatsMoviesWatched">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Timer film</h3>
+            <p id="shareStatsMovieHours">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Serier fullført</h3>
+            <p id="shareStatsSeriesCompleted">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Timer serier</h3>
+            <p id="shareStatsSeriesHours">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Bøker lest</h3>
+            <p id="shareStatsBooksRead">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Sider lest</h3>
+            <p id="shareStatsPagesRead">—</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="shareErrorSection" class="subsection hidden" aria-label="Delingsfeil">
+        <div class="section-header">
+          <h3>Kunne ikke vise oversikten</h3>
+        </div>
+        <p id="shareErrorText" class="share-error-text"></p>
+      </section>
+
+      <div class="share-actions">
+        <a href="./index.html" class="card-link">Til Tracker</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="share.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f1117" />
+</head>
+<body data-page="dashboard">
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-live="assertive" aria-label="Laster">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p id="loadingText">Laster...</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      <div class="user-bar">
+        <h2>Dashboard</h2>
+        <div class="user-bar-actions">
+          <p id="userInfo" aria-label="Innlogget bruker"></p>
+          <button id="logoutBtn" type="button">Logg ut</button>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Hovednavigasjon">
+        <a href="./app.html" class="top-nav__link is-active" aria-current="page">Dashboard</a>
+        <a href="./movies.html" class="top-nav__link">Filmer</a>
+        <a href="./tvshows.html" class="top-nav__link">TV-serier</a>
+        <a href="./cars.html" class="top-nav__link">Biler</a>
+        <a href="./books.html" class="top-nav__link">Bøker</a>
+      </nav>
+
+      <section id="statsSection" aria-label="Statistikk">
+        <h2>Oversikt</h2>
+        <div class="dashboard-grid">
+          <div class="mini-card">
+            <h3>Filmer sett</h3>
+            <p id="statsMoviesWatched">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Timer film</h3>
+            <p id="statsMovieHours">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Serier fullført</h3>
+            <p id="statsSeriesCompleted">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Timer serier</h3>
+            <p id="statsSeriesHours">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Bøker lest</h3>
+            <p id="statsBooksRead">—</p>
+          </div>
+          <div class="mini-card">
+            <h3>Sider lest</h3>
+            <p id="statsPagesRead">—</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="subsection share-section" id="shareOverviewSection" aria-label="Del oversikt">
+        <div class="section-header">
+          <h3>Del oversikt</h3>
+        </div>
+        <p class="share-intro">Lag en offentlig lenke med bare overblikket ditt fra dashboardet.</p>
+        <div class="share-link-row">
+          <input
+            type="text"
+            id="shareOverviewLink"
+            placeholder="Delingslenken vises her"
+            readonly
+            aria-label="Delingslenke for oversikt"
+          />
+          <button id="shareOverviewBtn" type="button">Del oversikt</button>
+        </div>
+        <p class="share-hint">Lenken inneholder bare statistikken din, ikke hele listene.</p>
+      </section>
+
+      <section aria-label="Seksjoner">
+        <h2>Snarveier</h2>
+        <div class="dashboard-grid">
+          <div class="mini-card">
+            <h3>Filmer</h3>
+            <p>Legg til og administrer filmsamlingen din.</p>
+            <a href="./movies.html" class="card-link">Åpne filmer</a>
+          </div>
+          <div class="mini-card">
+            <h3>TV-serier</h3>
+            <p>Spor serier med sesong- og episodefremdrift.</p>
+            <a href="./tvshows.html" class="card-link">Åpne TV-serier</a>
+          </div>
+          <div class="mini-card">
+            <h3>Biler</h3>
+            <p>Legg til biler med år, merke og modell.</p>
+            <a href="./cars.html" class="card-link">Åpne biler</a>
+          </div>
+          <div class="mini-card">
+            <h3>Bøker</h3>
+            <p>Spor lesing med sidetelling og fremgang.</p>
+            <a href="./books.html" class="card-link">Åpne bøker</a>
+          </div>
+          <div class="mini-card">
+            <h3>Spotify</h3>
+            <p>Koble til Spotify og se nylig spilte låter.</p>
+            <button id="connectSpotifyBtn" type="button">Koble til Spotify</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="subsection" id="spotifySection" aria-label="Spotify">
+        <div class="section-header">
+          <h3>Nylig spilt</h3>
+        </div>
+        <ul id="spotifyList" aria-label="Spotify-historikk"></ul>
+      </section>
+    </div>
+
+    <p id="message" aria-live="polite"></p>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bøker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f1117" />
+</head>
+<body data-page="books">
+  <div id="loadingOverlay" class="loading-overlay hidden" aria-live="assertive" aria-label="Laster">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <p id="loadingText">Laster...</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      <div class="user-bar">
+        <h2>Bøker</h2>
+        <div class="user-bar-actions">
+          <p id="userInfo" aria-label="Innlogget bruker"></p>
+          <button id="logoutBtn" type="button">Logg ut</button>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Hovednavigasjon">
+        <a href="./app.html" class="top-nav__link">Dashboard</a>
+        <a href="./movies.html" class="top-nav__link">Filmer</a>
+        <a href="./tvshows.html" class="top-nav__link">TV-serier</a>
+        <a href="./cars.html" class="top-nav__link">Biler</a>
+        <a href="./books.html" class="top-nav__link is-active" aria-current="page">Bøker</a>
+      </nav>
+
+      <section class="subsection" id="booksSection" aria-label="Bøker">
+        <div class="section-header">
+          <h3>Bøker</h3>
+        </div>
+
+        <div class="car-builder">
+          <div class="add-row add-row--cars-top">
+            <input type="text" id="bookTitle" placeholder="Boktittel" autocomplete="off" />
+            <input type="number" id="bookYear" placeholder="Utgivelsesår" min="0" max="2099" />
+            <input type="text" id="bookAuthor" placeholder="Forfatter" autocomplete="off" />
+          </div>
+          <div class="add-row add-row--cars-bottom">
+            <input type="text" id="bookGenre" placeholder="Sjanger (f.eks. Fantasy)" autocomplete="off" />
+            <button id="addBookBtn" type="button">Legg til manuelt</button>
+          </div>
+        </div>
+
+        <div class="section-header section-header--spaced">
+          <h3>Søk i Open Library</h3>
+        </div>
+
+        <div class="add-row add-row--movie">
+          <input type="text" id="openLibraryAuthorSearch" placeholder="Forfatter (f.eks. Stephen King)" autocomplete="off" />
+          <button id="searchOpenLibraryBtn" type="button">Søk</button>
+        </div>
+
+        <div id="authorResultsActions" class="author-results-actions hidden">
+          <button id="clearAuthorResultsBtn" type="button">Fjern søkeresultat</button>
+        </div>
+
+        <ul id="openLibraryAuthorResults" aria-label="Forfattersøkeresultater"></ul>
+
+        <div class="section-header section-header--spaced">
+          <h3>Bøker fra valgt forfatter</h3>
+        </div>
+
+        <ul id="openLibraryWorks" aria-label="Forfatterverk"></ul>
+
+        <div class="search-wrapper">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="8.5" cy="8.5" r="5.5"/>
+            <line x1="13" y1="13" x2="18" y2="18"/>
+          </svg>
+          <input type="search" id="bookSearch" placeholder="Søk på tittel, forfatter, sjanger, år..." />
+        </div>
+
+        <div class="sort-row">
+          <select id="bookSort" aria-label="Sorter bøker">
+            <option value="title-asc">Tittel: A–Å</option>
+            <option value="title-desc">Tittel: Å–A</option>
+            <option value="year-desc">År: nyeste først</option>
+            <option value="year-asc">År: eldste først</option>
+            <option value="author-asc">Forfatter: A–Å</option>
+            <option value="author-desc">Forfatter: Å–A</option>
+            <option value="progress-desc">Fremgang: høyest først</option>
+            <option value="progress-asc">Fremgang: lavest først</option>
+          </select>
+        </div>
+
+        <ul id="bookList" aria-label="Bokliste"></ul>
+      </section>
+    </div>
+
+    <p id="message" aria-live="polite"></p>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
