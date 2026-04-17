@@ -9,25 +9,24 @@ firebas-app/
   firebase.json
   .firebaserc
   .gitignore
-  src/
-    index.html
-    app.html
-    movies.html
-    tvshows.html
-    cars.html
-    books.html
-    share.html
-    app.js
-    auth.js
-    share.js
-    style.css
-    service-worker.js
-    ...
+  index.html
+  app.html
+  movies.html
+  tvshows.html
+  cars.html
+  books.html
+  share.html
+  app.js
+  auth.js
+  share.js
+  style.css
+  service-worker.js
+  ...
 ```
 
 ## Viktig
 
-- Firebase Hosting peker til `src/` via `firebase.json`.
+- Firebase Hosting peker til rotmappen via `firebase.json`.
 - `index.html` brukes til innlogging.
 - `app.html` er dashboardet.
 - De andre HTML-filene er egne sider for hver seksjon.
